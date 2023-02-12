@@ -1,0 +1,49 @@
+#1 How can you retrieve all the information from the cd.facilities table?
+
+ANS: Select * from cd.facilities
+
+--The asterisk selects all of the columns 
+
+#2 You want to print out a list of all of the facilities and their cost to members. How would you retrieve a list of only facility names and costs?
+
+ANS: Select name, membercost
+from cd.facilities 
+
+#3 Produce a list of facilities that charge a fee to members? Expected Results should have just 5 rows:
+
+ANS: Select *
+from cd.facilities 
+Where membercost > 0
+limit 5
+
+--The where statement eliminates the rows that have zero for the membership cost
+
+#4 Produce a list of facilities that charge a fee to members, and that fee is less than 1/50th of the monthly maintenance cost? Return the facid, facility name, member cost, and monthly maintenance of the facilities in question.
+Result is just two rows:
+
+ANS: Select facid, name, membercost, monthlymaintenance
+from cd.facilities 
+Where membercost / monthlymaintenance < 0.02 and membercost / monthlymaintenance > 0
+limit 2
+
+#5 Produce a list of all facilities with the word 'Tennis' in their name?
+
+ANS: Select * 
+from cd.facilities 
+Where name like 'T%'
+
+--using the percentage sign after the letter will show results of the names which starts with the letter "T"
+
+#6 How can you retrieve the details of facilities with ID 1 and 5? 
+
+ANS: Select *
+from cd.facilities 
+Where facid In('1','5')
+
+-- The In operator used in the where clause 
+
+#7 Produce a list of members who joined after the start of September 2012? Return the memid, surname, firstname, and joindate of the members in question
+
+
+
+
