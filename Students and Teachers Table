@@ -1,0 +1,53 @@
+Create Two Tables: Students and Teachers
+The students table should have columns for student_id, first_name,last_name, homeroom_number, phone,email, and graduation year.
+
+The teachers table should have columns for teacher_id, first_name, last_name, homeroom_number, department, email, and phone.
+
+Once you've made the tables, insert a student named Mark Watney (student_id=1) who has a phone number of 777-555-1234 and doesn't have an email. He graduates in 2035 and has 5 as a homeroom number.
+
+Then insert a teacher names Jonas Salk (teacher_id = 1) who as a homeroom number of 5 and is from the Biology department. His contact info is: jsalk@school.org and a phone number of 777-555-4321.
+
+ANS:
+
+create Table student(
+	student_ids Serial Primary Key,
+  
+	first_name VARCHAR(70)  Not Null,
+  
+	last_name VARCHAR(70) Not Null,
+  
+	homeroom_number integer,
+  
+	Phone Varchar(100) Unique Not Null, 
+  
+	email VARCHAR(100) Unique,
+  
+	graduation_year integer
+)
+
+
+Create Table Teacher(
+	teacher_id Serial Primary Key,
+
+	first_name VARCHAR(70) Not Null,
+
+	last_name VARCHAR(70) Not Null,
+
+	homeroom_number integer,
+
+	department VARCHAR(70) Not Null,
+
+	email VARCHAR(100) Unique,
+
+	phone VARCHAR(100) Unique Not Null
+)
+
+
+Insert Into student(first_name,last_name,student_ids,phone,graduation_year,homeroom_number)
+	Values
+	('Mark','Watney', 1 , '777-555-1234' , '2035', 5)
+	
+
+Insert into teacher(first_name,last_name,teacher_id, homeroom_number,department,email,phone)
+	Values
+	('Jonas','Salk',1, 5 ,'Biology','jsalk@school.or','777-555-4321')
