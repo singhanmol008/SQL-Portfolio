@@ -1,0 +1,42 @@
+
+#1   How many films have a rating of R and a replacement cost between $5 and $15?
+Select count(title)
+from film
+where rating = 'R' And replacement_cost Between 5 And 15
+
+#2 How many films have the word Truman somewhere in the title?
+select count(title)
+from film
+Where title like '%Truman%'
+
+# 3   What are the movies in the database that the actor “Woody” have acted in and what year were the movies released?  	
+
+select title, release_year
+	from film
+	where film_id In
+	(select film_id
+	from film_actor
+	Inner Join actor
+ 	On film_actor.actor_id = actor.actor_id
+ 	Where first_name = 'Woody')
+ 
+# 4 Want to Know and compare the various amounts of films we have per movie rating
+
+  select
+ sum( 
+Case  
+ When rating = 'R' Then 1
+ Else 0
+ End),
+  sum( 
+Case  
+ When rating = 'PG' Then 1
+ Else 0
+ End),
+  sum( 
+Case  
+ When rating = 'PG-13' Then 1
+ Else 0
+ End)
+ from film 
+ 
