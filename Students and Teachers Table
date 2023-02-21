@@ -1,3 +1,5 @@
+# In this sql database, I am querying to create mulitple tables and to add data into those tables.
+
 Create Two Tables: Students and Teachers
 The students table should have columns for student_id, first_name,last_name, homeroom_number, phone,email, and graduation year.
 
