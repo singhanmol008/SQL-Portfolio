@@ -1,3 +1,4 @@
+# Using sql, I am querying a database which contains data of movies. 
 
 #1   How many films have a rating of R and a replacement cost between $5 and $15?
 Select count(title)
